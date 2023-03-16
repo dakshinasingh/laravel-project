@@ -1,1 +1,4 @@
-home blade page
+@extends('layouts.master')
+@section('content')
+	home blade page
+@endsection
