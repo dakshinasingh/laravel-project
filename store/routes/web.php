@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pagesController;
+use App\Http\Controllers\Authcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,11 @@ use App\Http\Controllers\pagesController;
 |
 */
 
-Route::get('/',[pagesController::class,'Home'])->name('home');
-Route::get('cart',[pagesController::class,'Cart'])->name('cart');
+Route::get('/',[pagesController::class,'home'])->name('home');
+Route::get('/cart',[pagesController::class,'Cart'])->name('cart');
+
+//Auth
+
+Route::get('/login',[Authcontroller::class,'ShowLogin'])->name('ShowLogin');
+Route::get('/register',[Authcontroller::class,'ShowRegister'])->name('register');
+
