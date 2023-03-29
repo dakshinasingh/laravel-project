@@ -1,5 +1,8 @@
-@import 'global.sass';
-@import './pages/home.sass';
-@import 'partials/nav.sass';
 @import '_variable.scss';
+@import '_global.scss';
+
+
+@import './partials/nav.sass';
+
+@import './pages/home.sass';
 @import './pages/auth.sass';
