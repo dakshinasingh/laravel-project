@@ -41,7 +41,7 @@ class Authcontroller extends Controller
 			'password' => Hash::make($request->password),
 		]);
 
-		//login
+		//login in
 		Auth::login($user);
 		return back()->with('success', 'successfully logged in');
 	}
