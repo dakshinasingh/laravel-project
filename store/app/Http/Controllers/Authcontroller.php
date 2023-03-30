@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\Hash;
 class Authcontroller extends Controller
 {
     //show login page
-	static public function ShowLogin(){
-		return view('pages/login');
+	public function ShowLogin(){
+		return view('pages.login');
 	}
 
 	//show register page
-	static public function ShowRegister(){
-		return view('pages/register');
+	public function ShowRegister(){
+		return view('pages.register');
 	}
 
 	//login user

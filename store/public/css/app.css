@@ -1,6 +1,7 @@
 :root {
   --primary:#8097eb;
   --primary-dark:#4760bb;
+  --error:#f50303;
 }
 
 * {
@@ -50,7 +51,7 @@
 }
 .menu ul li a {
   color: #ffffff;
-  height: 36px;
+  height: 46px;
   width: 46px;
   font-size: 22px;
   background-color: var(--primary);
@@ -59,7 +60,7 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  padding-top: 10px;
+  padding-top: 0px;
   transition: all 0.5s ease;
   position: relative;
 }
@@ -144,4 +145,12 @@
   padding: 10px 15px;
   border-radius: 300px;
   border: 2px solid #ddd;
+}
+.login-page .login-form-box .field .has-error {
+  border-color: var(--error);
+}
+.login-page .login-form-box .field-error {
+  color: var(--error);
+  font-size: 13px;
+  margin-top: 2px;
 }

@@ -3,5 +3,6 @@
 @section('content')
 	<main class="homepage">
 		@include('pages.component.home.header')
+		
 	</main>
 @endsection
