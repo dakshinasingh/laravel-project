@@ -24,3 +24,5 @@ Route::get('/login',[Authcontroller::class,'showLogin'])->name('login')->middlew
 Route::get('/register',[Authcontroller::class,'showRegister'])->name('register')->middleware('guest');
 
 Route::post('/register',[Authcontroller::class,'postRegister'])->name('register')->middleware('guest');
+Route::get('/logout',[Authcontroller::class,'logout'])->name('logout')->middleware('auth');
+

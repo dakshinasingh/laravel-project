@@ -46,5 +46,10 @@ class Authcontroller extends Controller
 		return back()->with('success', 'successfully logged in');
 	}
 
+	public function logout(){
+		Auth::logout();
+		return back();
+	}
+
 	//reset password
 }
