@@ -19,11 +19,7 @@ class Authcontroller extends Controller
 		return view('pages.register');
 	}
 
-	//login user
 	
-	// public function userLogin(){
-	// 	return view('pages/login');
-	// }
 	//register user
 	public function postRegister(Request $request){
 
@@ -51,5 +47,21 @@ class Authcontroller extends Controller
 		return back();
 	}
 
-	//reset password
+	//login user
+	
+	public function postLogin(Request $request){
+		//validate
+		$details = $request->validate([
+			'email' =>'required|email',
+			'password' =>'required'
+		]);
+
+		if(Auth::attempt($details)){
+			return redirect()->intended('/');
+		}
+		return back()->withErrors([
+			'email' => 'Invalid details'
+		]);
+		
+	}
 }

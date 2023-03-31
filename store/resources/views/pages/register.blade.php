@@ -25,7 +25,7 @@
 						@enderror
 					</div>
 					<div class="field">
-						<label for="password">Confirm:</label>
+						<label for="password">Password:</label>
 						<input type="password" id="password" class="@error('password') has-error @enderror" name="password" placeholder="******">
 						@error('password')
 							<span class="field-error">{{$message}}</span>
