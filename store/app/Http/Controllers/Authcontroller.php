@@ -21,6 +21,7 @@ class Authcontroller extends Controller
 
 	
 	//register user
+
 	public function postRegister(Request $request){
 
 		//validation
@@ -32,6 +33,8 @@ class Authcontroller extends Controller
 
 		//registration
 		$user = User::create([
+	
+
 			'name' => $request->name,
 			'email' => $request->email,
 			'password' => Hash::make($request->password),
