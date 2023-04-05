@@ -1,9 +1,11 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authcontroller;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\pagesController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,20 @@ Route::get('/register',[Authcontroller::class,'ShowRegister'])->name('register')
 
 Route::post('/register',[Authcontroller::class,'postRegister'])->name('register')->middleware('guest');
 Route::post('/login',[Authcontroller::class,'postLogin'])->name('login')->middleware('guest');
-
 Route::get('/logout',[Authcontroller::class,'logout'])->name('logout')->middleware('auth');
-Route::get('/adminpanel',[AdminController::class,'dashboard'])->name('adminpanel')->middleware('admin');
+
+
+//admin panel routes
+Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'],function(){
+	Route::get('/',[AdminController::class,'dashboard'])->name('adminpanel');
+
+	//products routes
+	Route::group(['prefix' => 'products'],function(){
+		Route::get('/',[ProductController::class,'index'])->name('adminpanel.products');
+		Route::get('/create',[ProductController::class,'create'])->name('adminpanel.create');
+		Route::post('/create',[ProductController::class,'store'])->name('adminpanel.store');
+
+
+	});
+
+});
