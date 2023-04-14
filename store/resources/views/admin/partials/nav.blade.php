@@ -6,16 +6,16 @@
 
 	<ul>
 		<li>
-			<a href="">Dashboard</a>
+			<a href="{{Route('adminpanel')}}">Dashboard</a>
 		</li>
 		<li>
 			<a href="">Product</a>
 		</li>
 		<li>
-			<a href="">Categories</a>
+			<a href="{{Route('adminpanel.categories')}}">Categories</a>
 		</li>
 		<li>
-			<a href="">Colors</a>
+			<a href="{{Route('adminpanel.colors')}}">Colors</a>
 		</li>
 		<li>
 			<a href="">Orders</a>
