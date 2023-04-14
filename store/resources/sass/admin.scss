@@ -1,3 +1,5 @@
+@import './admin/_variable.scss';
 @import './admin/_global.sass';
-@import './admin/variable.scss';
+
 @import './admin/partials/_nav.sass';
+@import '~bootstrap/scss/bootstrap.scss';
