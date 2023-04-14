@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('title','category')
 @section('content')
+	
 	<h1 class="page-title">Categories</h1>
 	<div class="container">
 		<div class="row mb-5">
@@ -25,6 +26,48 @@
 								<button type="submit" class="btn btn-primary">create</button>
 							</div>
 						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<h5>Categories</h5>
+					</div>
+					<div class="card-body">
+						<table class="table table-stripped">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Name</th>
+									<th>Total Products</th>
+									<th>Published</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach ($categories as $category)
+								<tr>
+									<td>{{$category->id}}</td>
+									<td>{{$category->name}}</td>
+									<td>-</td>
+									<td>{{\carbon\carbon::parse($category->created_at)->format('d/m/Y')}}</td>
+									<td>
+										<form action="{{Route('adminpanel.category.destroy', $category->id)}}" method="post">
+											@csrf 
+											@method('DELETE')
+											<button type="submit" class="btn btn-primary">Delete</button>
+											
+
+										</form>
+									</td>
+								</tr>
+								@endforeach
+								
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
