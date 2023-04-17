@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Color;
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
 	//displaying products table
     public function index(){
-		return view('admin.pages.products.index');
+		$products = Product::all();
+		return view('admin.pages.products.index',['Products' => $products]);
 	}
 	//create
     public function create(){
-		return view('admin.pages.products.create');
+		$categories = Category::all();
+		$colors = Color::all();
+		return view('admin.pages.products.create',['categories' => $categories, 'colors' => $colors]);
 	}
 	//store
     public function store(Request $request){

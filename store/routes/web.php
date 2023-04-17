@@ -40,8 +40,8 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'],function(){
 	//products routes
 	Route::group(['prefix' => 'products'],function(){
 		Route::get('/',[ProductController::class,'index'])->name('adminpanel.products');
-		Route::get('/create',[ProductController::class,'create'])->name('adminpanel.create');
-		Route::post('/create',[ProductController::class,'store'])->name('adminpanel.store');
+		Route::get('/create',[ProductController::class,'create'])->name('adminpanel.products.create');
+		Route::post('/create',[ProductController::class,'store'])->name('adminpanel.products.store');
 	});
 	Route::group(['prefix' => 'categories'],function(){
 		Route::get('/',[CategoryController::class,'index'])->name('adminpanel.categories');
