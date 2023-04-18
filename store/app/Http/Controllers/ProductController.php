@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
 	//displaying products table
     public function index(){
-		$products = Product::with('category')->orderBy('created_at', 'desc')->get();
+		$products = Product::with('category','colors')->orderBy('created_at', 'desc')->get();
 		return view('admin.pages.products.index',['Products' => $products]);
 	}
 	//create
@@ -58,6 +58,7 @@ class ProductController extends Controller
 	}
 	//destroy
     public function destroy($id){
-		return "delete product";
+		Product::findOrfail($id)->delete();
+		return back()->with('success','Product deleted successfully');
 	}
 }
