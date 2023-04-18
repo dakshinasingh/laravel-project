@@ -10,7 +10,7 @@
 						<h3>Create Product</h3>
 					</div>
 					<div class="card-body">
-						<form action="{{route('adminpanel.products.store')}}" method="post">
+						<form action="{{route('adminpanel.products.store')}}" method="post" enctype="multipart/form-data">
 							@csrf 
 							<div class="row mb-3">
 								<div class="col-md-6">

@@ -4,6 +4,10 @@
 
 	<h1 class="page-title">Products</h1>
 	<div class="container">
+		<div class="text-end mb-3">
+			<a href="{{route('adminpanel.products.create')}}" class="btn btn-primary">+ &nbsp; Create Product</a>
+
+		</div>
 		<div class="row">
 			<div class="col-12">
 				<div class="card">
@@ -33,15 +37,9 @@
 									<td>{{$product->category->name}}</td>
 									<td>-</td>
 									<td>-</td>
-									<td>-
-										<!-- <form action="{{Route('adminpanel.color.destroy', $color->id)}}" method="post">
-											@csrf 
-											@method('DELETE')
-											<button type="submit" class="btn btn-primary">Delete</button>
-											
+									<td>{{\carbon\carbon::parse($product->created_at)->format('d/m/Y')}}</td>
 
-										</form> -->
-									</td>
+									<td>-</td>
 								</tr>
 								@endforeach
 								
