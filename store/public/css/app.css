@@ -23,6 +23,11 @@
   width: 100%;
 }
 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 :root {
   --primary:#8097eb;
   --primary-dark:#4760bb;
@@ -152,4 +157,8 @@
   color: var(--error);
   font-size: 13px;
   margin-top: 2px;
+}
+
+.accounts-page {
+  padding: 50px 15px;
 }

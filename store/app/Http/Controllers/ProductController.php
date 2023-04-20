@@ -49,16 +49,20 @@ class ProductController extends Controller
 		return back()->with('success','Product created successfully');
 	}
 	//edit
-    public function edit(){
-		return "edit product";
+    public function edit($id){
+		$product = Product::findOrFail($id);
+		$categories = Category::all();
+		$colors = Color::all();
+		return view('admin.pages.products.edit',['categories' => $categories, 'colors' => $colors, 'product' => $product]);
+
 	}
 	//update
-    public function update(){
-		return "update product";
+    public function update(Request $request, $id){
+		dd($request->all());
 	}
 	//destroy
     public function destroy($id){
-		Product::findOrfail($id)->delete();
+		Product::findOrFail($id)->delete();
 		return back()->with('success','Product deleted successfully');
 	}
 }

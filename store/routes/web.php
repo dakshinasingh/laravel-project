@@ -22,6 +22,9 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/',[pagesController::class,'home'])->name('home');
 Route::get('/cart',[pagesController::class,'Cart'])->name('cart');
+Route::get('/wish-list',[pagesController::class,'wishlist'])->name('wishlist');
+Route::get('/account',[pagesController::class,'account'])->name('account')->middleware('auth');
+
 
 //Auth
 
@@ -43,6 +46,7 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'],function(){
 		Route::get('/create',[ProductController::class,'create'])->name('adminpanel.products.create');
 		Route::post('/create',[ProductController::class,'store'])->name('adminpanel.products.store');
 		Route::get('/{id}',[ProductController::class,'edit'])->name('adminpanel.products.edit');
+		Route::put('/{id}',[ProductController::class,'update'])->name('adminpanel.products.edit');
 		Route::delete('/{id}',[ProductController::class,'destroy'])->name('adminpanel.products.destroy');
 
 	});

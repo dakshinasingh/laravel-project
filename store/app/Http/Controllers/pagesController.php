@@ -12,5 +12,11 @@ class pagesController extends Controller
 	public function cart(){
 		return view('pages/cart');
 	}
+	public function wishlist(){
+		return view('pages/wishlist');
+	}
+	public function account(){
+		return view('pages/account');
+	}
 
 }

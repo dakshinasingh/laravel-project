@@ -39,6 +39,8 @@
 					<div class="field">
 						<button type="submit" class="btn btn-primary btn-block" >Register</button>
 					</div>
+					<a href="{{route('login')}}">Already a user? Login Now</a>
+
 
 				</form>
 			</div>
