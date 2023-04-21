@@ -32,6 +32,7 @@
   --primary:#8097eb;
   --primary-dark:#4760bb;
   --error:#f50303;
+  --pink:#fa5d6d;
 }
 
 .home-header {
@@ -77,6 +78,12 @@
   text-align: center;
   color: var(--primary-dark);
   margin-bottom: 30px;
+}
+
+.products-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .menu {
@@ -172,4 +179,53 @@
 
 .accounts-page {
   padding: 50px 15px;
+}
+
+.product-box {
+  border-radius: 3px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0px 5px 40px #000;
+  text-align: center;
+  max-width: 270px;
+}
+.product-box .image {
+  height: 250px;
+  width: 270px;
+  text-aliign: center;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.product-box .product-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--pink);
+  margin-bottom: 10px;
+}
+.product-box .color-platelets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+.product-box .color-platelets .color-platelet {
+  width: 20px;
+  height: 5px;
+  border-radius: 10px;
+  background: #000;
+}
+.product-box .product-Category {
+  color: #6f6f6f;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.product-box .product-price {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
