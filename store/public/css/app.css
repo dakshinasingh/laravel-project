@@ -68,6 +68,17 @@
   border: 2px solid #ffffff;
 }
 
+.products-section {
+  padding: 70px 0;
+}
+.products-section .section-title {
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--primary-dark);
+  margin-bottom: 30px;
+}
+
 .menu {
   background: #000;
   height: 50px;
