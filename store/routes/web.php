@@ -24,6 +24,7 @@ Route::get('/',[pagesController::class,'home'])->name('home');
 Route::get('/cart',[pagesController::class,'Cart'])->name('cart');
 Route::get('/wish-list',[pagesController::class,'wishlist'])->name('wishlist');
 Route::get('/account',[pagesController::class,'account'])->name('account')->middleware('auth');
+Route::get('/product/{id}',[pagesController::class,'product'])->name('product');
 
 
 //Auth
