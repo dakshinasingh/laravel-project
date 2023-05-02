@@ -4,14 +4,14 @@
 	<div class="product-page">
 		<div class="container">
 			<div class="product-page-row">
-				<section class="prouct-page-image">
+				<section class="product-page-image">
 					<img src="{{asset('storage/' . $product->image)}}" alt="">
 				</section>
-				<section class="prouct-page-details">
+				<section class="product-page-details">
 					<p class="p-title">{{$product->title}}</p>
 					<p class="p-price">{{$product->price}}</p>
 					<p class="p-category">- {{$product->category->name}}</p>
-					<p class="description">{{$product->description}}</</p>
+					<p class="p-description">{{$product->description}}</</p>
 					<form action="" method="post">
 						@csrf
 						<div class="p-form">
