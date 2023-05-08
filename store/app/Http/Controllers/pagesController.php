@@ -12,7 +12,8 @@ class pagesController extends Controller
 		return view('pages/home',['products' => $products]);
 	}
 	public function cart(){
-		return view('pages/cart');
+		dd(session()->get('cart'));
+		//return view('pages/cart');
 	}
 	public function wishlist(){
 		return view('pages/wishlist');

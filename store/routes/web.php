@@ -3,11 +3,12 @@
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authcontroller;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\pagesController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,9 @@ Route::get('/cart',[pagesController::class,'Cart'])->name('cart');
 Route::get('/wish-list',[pagesController::class,'wishlist'])->name('wishlist');
 Route::get('/account',[pagesController::class,'account'])->name('account')->middleware('auth');
 Route::get('/product/{id}',[pagesController::class,'product'])->name('product');
+
+//Cart
+Route::post('/add-to-cart/{id}',[CartController::class,'addToCart'])->name('addToCart');
 
 
 //Auth

@@ -1,6 +1,10 @@
 @extends('layouts.master')
 @section('title',$product->title)
 @section('content')
+
+	@if(session()->has('addedToCart'))
+		{{session()->get('addedToCart')}}
+	@endif
 	<div class="product-page">
 		<div class="container">
 			<div class="product-page-row">
@@ -12,7 +16,7 @@
 					<p class="p-price">{{$product->price}}</p>
 					<p class="p-category">- {{$product->category->name}}</p>
 					<p class="p-description">{{$product->description}}</</p>
-					<form action="" method="post">
+					<form action="{{route('addToCart', $product->id)}}" method="post">
 						@csrf
 						<div class="p-form">
 							<div class="p-colors">
