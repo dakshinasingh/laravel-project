@@ -5,6 +5,21 @@
 		<h1>Cart</h1>
 		<h3 class="cart-amount">${{App\Models\Cart::totalAmount()}}</h3>
 	</header>
+
+	@if(session()->has('success'))
+		<section class="pop-up">
+			<div class="pop-up-box">
+				<div class="pop-up-title">
+					{{session()->get('success')}}
+				</div>
+				<div class="pop-up-action">
+					<a href="{{route('cart')}}" class="btn btn-outlined">Continue shopping</a>
+					<a href="{{route('cart')}}" class="btn btn-primary">Checkout</a>
+				</div>
+			</div>
+		</section>
+	@endif
+
 	<main class="cart-page">
 		<div class="container">
 			<div class="cart-table">
@@ -34,7 +49,7 @@
 								<td>{{$item['quantity']}}</td>
 								<td>${{App\Models\Cart::unitPrice($item)}}</td>
 								<td>
-									<form action="" method="post">
+									<form action="{{route('removeFromCart', $key)}}" method="post">
 										@csrf
 										<button type="submit" class="btn btn-primary">X</button>
 									</form>
