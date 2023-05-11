@@ -3,7 +3,7 @@
 @section('content')
 	<header class="page-header">
 		<h1>Cart</h1>
-		<h3 class="cart-amount">$999</h3>
+		<h3 class="cart-amount">${{App\Models\Cart::totalAmount()}}</h3>
 	</header>
 	<main class="cart-page">
 		<div class="container">
@@ -32,7 +32,7 @@
 								<td>{{$item['color']['name']}}</td>
 								<td>{{$item['product']['price']}}</td>
 								<td>{{$item['quantity']}}</td>
-								<td>99</td>
+								<td>${{App\Models\Cart::unitPrice($item)}}</td>
 								<td>
 									<form action="" method="post">
 										@csrf
@@ -43,7 +43,7 @@
 						@endforeach
 						<tr class="cart-total">
 							<td colspan="4" style="text-align: right">Total</td>
-							<td>$9,999</td>
+							<td>${{App\Models\Cart::totalAmount()}}</td>
 						</tr>
 						@else
 						<tr>
@@ -56,6 +56,7 @@
 			<div class="cart-actions">
 				<a href="" class="btn btn-primary"> Go to checkout</a>
 			</div>
+
 		</div>
 	</main>
 @endsection
