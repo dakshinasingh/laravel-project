@@ -9,6 +9,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\pagesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,16 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
+Route::get('/success',[pagesController::class,'success'])->name('success');
 Route::get('/',[pagesController::class,'home'])->name('home');
+
 Route::get('/cart',[pagesController::class,'Cart'])->name('cart');
 Route::get('/wish-list',[pagesController::class,'wishlist'])->name('wishlist');
 Route::get('/account',[pagesController::class,'account'])->name('account')->middleware('auth');
+Route::get('/checkout',[pagesController::class,'checkout'])->name('checkout')->middleware('auth');
 Route::get('/product/{id}',[pagesController::class,'product'])->name('product');
+Route::post('/stripe-checkout',[CheckoutController::class,'stripecheckout'])->name('stripecheckout')->middleware('auth');
+
 
 //Cart
 Route::post('/add-to-cart/{id}',[CartController::class,'addToCart'])->name('addToCart');

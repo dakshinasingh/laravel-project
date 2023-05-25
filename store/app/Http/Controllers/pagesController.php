@@ -21,7 +21,12 @@ class pagesController extends Controller
 	public function account(){
 		return view('pages/account');
 	}
-
+	public function checkout(){
+		return view('pages/checkout');
+	}
+	public function success(){
+		return "successfully done";
+	}
 	public function product($id){
 		$product = Product::with('category','colors')->findOrFail($id);
 		return view('pages.product', ['product' => $product]);

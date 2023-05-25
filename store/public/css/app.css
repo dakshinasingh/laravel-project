@@ -190,19 +190,20 @@
   margin-bottom: 30px;
   color: var(--primary-dark);
 }
-.login-page .login-form-box .field {
+.field {
   margin-bottom: 25px;
 }
-.login-page .login-form-box .field input {
+.field input, .field select {
   width: 90%;
   padding: 10px 15px;
   border-radius: 300px;
   border: 2px solid #ddd;
 }
-.login-page .login-form-box .field .has-error {
+.field .has-error {
   border-color: var(--error);
 }
-.login-page .login-form-box .field-error {
+
+.field-error {
   color: var(--error);
   font-size: 13px;
   margin-top: 2px;
@@ -361,6 +362,21 @@
   display: flex;
   justify-content: center;
   padding: 30px 0;
+}
+
+.checkout-page {
+  padding: 70px 0;
+  background: #faffafa;
+}
+.checkout-page .checkout-form {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  padding: 30px;
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .product-box {

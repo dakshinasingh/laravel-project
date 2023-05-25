@@ -58,7 +58,7 @@
 						@endforeach
 						<tr class="cart-total">
 							<td colspan="4" style="text-align: right">Total</td>
-							<td>${{App\Models\Cart::totalAmount()}}</td>
+							<td>${{App\Models\Cart::totalAmount()*100}}</td>
 						</tr>
 						@else
 						<tr>
@@ -69,7 +69,7 @@
 				</table>
 			</div>
 			<div class="cart-actions">
-				<a href="" class="btn btn-primary"> Go to checkout</a>
+				<a href="{{route('checkout')}}" class="btn btn-primary"> Go to checkout</a>
 			</div>
 
 		</div>
