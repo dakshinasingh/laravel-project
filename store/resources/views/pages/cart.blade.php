@@ -58,7 +58,7 @@
 						@endforeach
 						<tr class="cart-total">
 							<td colspan="4" style="text-align: right">Total</td>
-							<td>${{App\Models\Cart::totalAmount()*100}}</td>
+							<td>${{App\Models\Cart::totalAmount()}}</td>
 						</tr>
 						@else
 						<tr>
