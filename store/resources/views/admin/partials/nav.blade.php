@@ -18,7 +18,7 @@
 			<a href="{{Route('adminpanel.colors')}}">Colors</a>
 		</li>
 		<li>
-			<a href="">Orders</a>
+			<a href="{{Route('adminpanel.orders')}}">Orders</a>
 		</li>
 	</ul>
 	<div class="logout">

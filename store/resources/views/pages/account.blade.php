@@ -13,7 +13,7 @@
 					</p>
 				</div>
 				<div class="user-btn">
-					<form action="{{route('logout')}}">
+					<form action="{{route('logout')}}" method="post">
 						@csrf
 						<button class="btn btn-primary" >Logout</button>	
 					</form>

@@ -6,10 +6,12 @@ use App\Http\Controllers\Authcontroller;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\pagesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,10 @@ Route::post('/stripe-checkout',[CheckoutController::class,'stripecheckout'])->na
 //Cart
 Route::post('/add-to-cart/{id}',[CartController::class,'addToCart'])->name('addToCart');
 Route::post('/remove-from-cart/{id}',[CartController::class,'removeFromCart'])->name('removeFromCart');
+
+Route::post('/add-to-wishlist/{id}',[WishlistController::class,'post'])->name('addToWishlist')->middleware('auth');
+Route::post('/remove-from-wishlist/{id}',[WishlistController::class,'remove'])->name('removeFromWishlist')->middleware('auth');
+
 
 
 //Auth
@@ -71,6 +77,12 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'],function(){
 		Route::get('/',[ColorController::class,'index'])->name('adminpanel.colors');
 		Route::post('/',[ColorController::class,'store'])->name('adminpanel.color.store');
 		Route::delete('/{id}',[ColorController::class,'destroy'])->name('adminpanel.color.destroy');
+	});
+	Route::group(['prefix' => 'orders'],function(){
+		Route::get('/',[OrderController::class,'index'])->name('adminpanel.orders');
+		Route::get('/{id}',[OrderController::class,'view'])->name('adminpanel.orders.view');
+		Route::post('/{id}',[OrderController::class,'updateStatus'])->name('adminpanel.orders.status.update');
+
 	});
 
 });
